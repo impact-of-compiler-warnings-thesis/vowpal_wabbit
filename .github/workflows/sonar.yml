@@ -23,6 +23,7 @@ jobs:
           ./vcpkg/bootstrap-vcpkg.sh
       - name: Run build-wrapper
         run: |
+          sudo apt install ninja-build
           mkdir build
           cd build
           cmake --preset=vcpkg-debug -DBUILD_TESTING=OFF .. -GNinja
