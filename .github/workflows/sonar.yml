@@ -23,6 +23,7 @@ jobs:
           ./vcpkg/bootstrap-vcpkg.sh
       - name: Run build-wrapper
         run: |
+          git submodule update --init --recursive
           sudo apt install ninja-build
           export VCPKG_ROOT=$GITHUB_WORKSPACE/vcpkg
           mkdir build
